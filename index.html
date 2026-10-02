@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/fancybox.css">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner" data-aos="fade" data-aos-delay="4000">
+                <a class="header__logo logo" href="#">
+                    <img src="images/logo.png" alt="logo">
+                </a>
+                <div class="header__wrp">
+                    <button class="header__btn btn btn--colored" type="button" data-screen-target="start"
+                        aria-controls="start">
+                        <span>
+                            Добавить свое письмо
+                        </span>
+                    </button>
+                </div>
+                <div class="header__burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <main class="main">
+            <picture class="main__page-bg page-bg" aria-hidden="true">
+                <img src="images/page-bg.jpg" alt="bg">
+            </picture>
+            <section class="main__home home screen screen--active" id="home" data-screen="home" aria-hidden="false">
+                <div class="home__videos">
+                    <video class="home__video home__video--main" src="videos/home-video.mp4" autoplay muted playsinline
+                        preload="auto"></video>
+
+                    <video class="home__video home__video--loop" src="videos/home-video-loop.mp4" muted playsinline
+                        preload="auto" loop></video>
+                </div>
+                <div class="container">
+                    <div class="home__inner">
+                        <h1 class="home__title" data-aos="fade-up" data-aos-delay="4000">
+                            OREO & BTS <br>
+                            приглашают присоединиться
+                        </h1>
+                        <div class="home__texts" data-aos="fade-up" data-aos-delay="4250">
+                            <p class="home__text">
+                                Помогите создать самое большое в мире письмо о любви к BTS.
+                            </p>
+                            <p class="home__text">
+                                Стань частью истории BTS!
+                            </p>
+                            <p class="home__text">
+                                Напиши письмо или поучаствуй в конкурсе и получи шанс выиграть эксклюзивные призы.
+                            </p>
+                        </div>
+
+                        <div class="home__links links" data-aos="fade-up" data-aos-delay="4500">
+                            <a class="links__link btn btn--colored" href="#start" data-screen-target="start"
+                                aria-controls="start">
+                                <span>
+                                    Оставить письмо
+                                </span>
+                            </a>
+                            <a class="links__link btn btn--transparent" href="#letters" data-screen-target="letters"
+                                aria-controls="letters">
+                                <span>
+                                    Посмотреть все письма
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__start start screen" id="start" data-screen="start" aria-hidden="true">
+                <div class="container">
+                    <div class="start__inner" data-aos="fade">
+                        <div class="start__body">
+                            <div class="start__titling">
+                                <div class="start__suptext">
+                                    Как принять участие
+                                </div>
+                                <h2 class="start__title">
+                                    Отправьте свое письмо в галерею писем BTS
+                                </h2>
+                            </div>
+                            <picture class="start__img">
+                                <img src="images/start-img.png" alt="img">
+                            </picture>
+                            <div class="start__links links">
+                                <a class="links__link btn btn--back" href="#home" data-screen-target="home"
+                                    aria-controls="home">
+                                    <span>
+                                        <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_6002_217775)">
+                                                <path
+                                                    d="M13.997 7.99384C13.997 5.63042 13.997 3.26387 14 0.900449C14 0.644099 13.9483 0.415885 13.766 0.231438C13.5077 -0.0280388 13.1491 -0.0749321 12.8148 0.118894C11.9366 0.625341 11.0584 1.13179 10.1802 1.64136C6.95898 3.50459 3.73475 5.37094 0.513567 7.23417C0.230954 7.39674 0.0212727 7.59994 0.00303936 7.9532C-0.0151939 8.3221 0.16106 8.5722 0.464946 8.74726C1.35229 9.25684 2.2366 9.77267 3.12394 10.2854C6.34209 12.1455 9.56023 14.0024 12.7753 15.8719C13.295 16.1752 13.8511 15.9001 13.9696 15.4124C13.997 15.3029 13.997 15.1842 13.997 15.0716C14 12.7144 13.997 10.3541 13.997 7.99384Z"
+                                                    fill="#09102E" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_6002_217775">
+                                                    <rect width="14" height="16" fill="white"
+                                                        transform="matrix(-1 0 0 1 14 0)" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <a class="links__link btn btn--colored" href="#configurator"
+                                    data-screen-target="configurator" aria-controls="configurator">
+                                    <span>
+                                        Начнем
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__configurator configurator screen" id="configurator" data-screen="configurator"
+                aria-hidden="true">
+                <div class="container">
+                    <div class="configurator__inner">
+                        <div class="configurator__head configurator-head">
+                            <div class="configurator-head__items">
+                                <div class="configurator-head__item configurator-head__item--active" data-step-head="1">
+                                    <div class="configurator-head__titling">
+                                        <div class="configurator-head__suptext" data-aos="fade-up">
+                                            Шаг 1:
+                                        </div>
+                                        <h2 class="configurator-head__title" data-aos="fade-up" data-aos-delay="250">
+                                            Выберите свой цвет
+                                        </h2>
+                                        <p class="configurator-head__text" data-aos="fade-up" data-aos-delay="500">
+                                            Выберите наиболее подходящий вам цвет.
+                                            С этого начинается настроение.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="configurator-head__item" data-step-head="2">
+                                    <div class="configurator-head__titling">
+                                        <div class="configurator-head__suptext" data-aos="fade-up">
+                                            Шаг 2:
+                                        </div>
+                                        <h2 class="configurator-head__title" data-aos="fade-up" data-aos-delay="250">
+                                            Выскажите свою любовь
+                                        </h2>
+                                        <p class="configurator-head__text" data-aos="fade-up" data-aos-delay="500">
+                                            Найдите слова, подпитывающие вашу любовь к BTS.
+                                            Выберите фразу, выражающую вашу любовь к BTS.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="configurator-head__item" data-step-head="3">
+                                    <div class="configurator-head__titling">
+                                        <div class="configurator-head__suptext" data-aos="fade-up">
+                                            Шаг 3:
+                                        </div>
+                                        <h2 class="configurator-head__title" data-aos="fade-up" data-aos-delay="250">
+                                            Сделайте его своим
+                                        </h2>
+                                        <p class="configurator-head__text" data-aos="fade-up" data-aos-delay="500">
+                                            Выберите наклейки и разместите их, как вам нравится.
+                                            Хотите – создайте лаконичный <br> дизайн, а хотите –
+                                            дайте волю фантазии в безумном стиле BTS.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="configurator__body configurator-body">
+                            <div class="configurator-body__cards cards" data-aos="zoom-in">
+                                <div class="cards__card card">
+                                    <div class="card__images">
+                                        <picture class="card__img card__img--active" data-color-preview="color-1">
+                                            <img src="images/card-img-1.png" alt="card">
+                                        </picture>
+                                        <picture class="card__img" data-color-preview="color-2">
+                                            <img src="images/card-img-2.jpg" alt="card">
+                                        </picture>
+                                        <picture class="card__img" data-color-preview="color-3">
+                                            <img src="images/card-img-3.jpg" alt="card">
+                                        </picture>
+                                    </div>
+                                    <picture class="card__logo">
+                                        <img src="images/card-logo.png" alt="card-logo">
+                                    </picture>
+                                    <div class="cards__words words">
+                                        <p class="words__word" data-word-preview="word-1">
+                                            BTS OREO покорили меня с первого взгляда
+                                        </p>
+                                        <p class="words__word" data-word-preview="word-2">
+                                            BTS OREO покорили меня
+                                        </p>
+                                        <p class="words__word" data-word-preview="word-3">
+                                            BTS OREO покорили всех
+                                        </p>
+                                        <p class="words__word" data-word-preview="word-4">
+                                            BTS - топ
+                                        </p>
+                                        <p class="words__word" data-word-preview="word-5">
+                                            BTS OREO покорили всех с первого взгляда
+                                        </p>
+                                        <p class="words__word" data-word-preview="word-6">
+                                            BTS OREO покорили меня и всех с первого
+                                        </p>
+                                    </div>
+                                    <div class="cards__stikers stikers">
+                                        <ul class="stikers__list">
+                                            <li class="stikers__item" data-sticker-preview="sticker-1">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-2">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-3">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-4">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-5">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-6">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-7">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-8">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-9">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-10">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-11">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-12">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-13">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-14">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-15">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-16">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-17">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-18">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-19">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-20">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-21">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-22">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-23">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                            <li class="stikers__item" data-sticker-preview="sticker-24">
+                                                <div class="stikers__body">
+                                                    <picture class="stikers__img">
+                                                        <img src="images/stickers-img-1.png" alt="sticker">
+                                                    </picture>
+                                                    <button class="stikers__delete" type="button"
+                                                        aria-label="Удалить стикер">
+                                                        <svg width="14" height="14" viewBox="0 0 14 14">
+                                                            <path d="M2 2L12 12M12 2L2 12" stroke="currentColor"
+                                                                stroke-width="2" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p class="card__subtext">
+                                        С наилучшими пожеланиями от Казахстана
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="configurator__wrapper">
+                            <form class="configurator__config config" id="configurator-form" action="#" method="post">
+                                <div class="config__step config__step--active" data-step-panel="1">
+                                    <div class="config__choose-colors choose-colors">
+                                        <label class="choose-colors__color choose-colors__color--active"
+                                            data-aos="fade-up">
+                                            <div class="choose-colors__inner">
+                                                <picture class="choose-colors__bg">
+                                                    <img src="images/colors-bg-1.png" alt="color">
+                                                </picture>
+                                                <input class="choose-colors__input" type="radio" name="color"
+                                                    value="color-1" data-color-id="color-1" checked>
+                                            </div>
+                                        </label>
+                                        <label class="choose-colors__color" data-aos="fade-up" data-aos-delay="250">
+                                            <div class="choose-colors__inner">
+                                                <picture class="choose-colors__bg">
+                                                    <img src="images/colors-bg-2.png" alt="color">
+                                                </picture>
+                                                <input class="choose-colors__input" type="radio" name="color"
+                                                    value="color-2" data-color-id="color-2">
+                                            </div>
+                                        </label>
+                                        <label class="choose-colors__color" data-aos="fade-up" data-aos-delay="500">
+                                            <div class="choose-colors__inner">
+                                                <picture class="choose-colors__bg">
+                                                    <img src="images/colors-bg-3.png" alt="color">
+                                                </picture>
+
+                                                <input class="choose-colors__input" type="radio" name="color"
+                                                    value="color-3" data-color-id="color-3">
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="config__step" data-step-panel="2">
+                                    <div class="config__choose-words choose-words" data-aos="zoom-in">
+                                        <div class="choose-words__swiper swiper">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS OREO покорили меня с первого взгляда
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-1" data-word-id="word-1">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS OREO покорили меня
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-2" data-word-id="word-2">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS OREO покорили всех
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-3" data-word-id="word-3">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS - топ
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-4" data-word-id="word-4">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS OREO покорили всех с первого взгляда
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-5" data-word-id="word-5">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-words__word">
+                                                        <div class="choose-words__body">
+                                                            <p class="choose-words__text">
+                                                                BTS OREO покорили меня и всех с первого
+                                                            </p>
+                                                            <input class="choose-words__input" type="radio" name="word"
+                                                                value="word-6" data-word-id="word-6">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="choose-words__arrow arrow choose-words-arrow--prev" type="button"
+                                            aria-label="Предыдущая фраза">
+                                            <div class="arrow__inner" data-aos="zoom-in" data-aos-delay="250">
+                                                <div class="arrow__body">
+                                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_6003_3527)">
+                                                            <path
+                                                                d="M13.997 7.99378C13.997 5.63036 13.997 3.26381 14 0.900388C14 0.644038 13.9483 0.415824 13.766 0.231377C13.5077 -0.0280998 13.1491 -0.0749931 12.8148 0.118833C11.9366 0.62528 11.0584 1.13173 10.1802 1.6413C6.95898 3.50453 3.73475 5.37088 0.513567 7.23411C0.230954 7.39668 0.0212727 7.59988 0.00303936 7.95314C-0.0151939 8.32204 0.16106 8.57213 0.464946 8.7472C1.35229 9.25678 2.2366 9.7726 3.12394 10.2853C6.34209 12.1454 9.56023 14.0024 12.7753 15.8719C13.295 16.1751 13.8511 15.9 13.9696 15.4123C13.997 15.3029 13.997 15.1841 13.997 15.0715C14 12.7144 13.997 10.3541 13.997 7.99378Z"
+                                                                fill="#09102E" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_6003_3527">
+                                                                <rect width="14" height="16" fill="white"
+                                                                    transform="matrix(-1 0 0 1 14 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <button class="choose-words__arrow arrow choose-words-arrow--next" type="button"
+                                            aria-label="Следующая фраза">
+                                            <div class="arrow__inner" data-aos="zoom-in" data-aos-delay="250">
+                                                <div class="arrow__body">
+                                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_6003_2693)">
+                                                            <path
+                                                                d="M0.00303885 7.99378C0.00303885 5.63036 0.00303885 3.26381 0 0.900388C0 0.644038 0.0516605 0.415824 0.233992 0.231377C0.492294 -0.0280998 0.850879 -0.0749931 1.18515 0.118833C2.06338 0.62528 2.94161 1.13173 3.81984 1.6413C7.04102 3.50453 10.2652 5.37088 13.4864 7.23411C13.769 7.39668 13.9787 7.59988 13.997 7.95314C14.0152 8.32204 13.8389 8.57213 13.5351 8.7472C12.6477 9.25678 11.7634 9.7726 10.8761 10.2853C7.65791 12.1454 4.43977 14.0024 1.22466 15.8719C0.705014 16.1751 0.148904 15.9 0.0303885 15.4123C0.00303885 15.3029 0.00303885 15.1841 0.00303885 15.0715C0 12.7144 0.00303885 10.3541 0.00303885 7.99378Z"
+                                                                fill="#09102E" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_6003_2693">
+                                                                <rect width="14" height="16" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="config__step" data-step-panel="3">
+                                    <div class="config__choose-stickers choose-stickers">
+                                        <div class="choose-stickers__swiper swiper" data-aos="zoom-in">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-1"
+                                                                data-sticker-id="sticker-1">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-2"
+                                                                data-sticker-id="sticker-2">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-3"
+                                                                data-sticker-id="sticker-3">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-4"
+                                                                data-sticker-id="sticker-4">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-5"
+                                                                data-sticker-id="sticker-5">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-6"
+                                                                data-sticker-id="sticker-6">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-7"
+                                                                data-sticker-id="sticker-7">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-8"
+                                                                data-sticker-id="sticker-8">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-9"
+                                                                data-sticker-id="sticker-9">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-10"
+                                                                data-sticker-id="sticker-10">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-11"
+                                                                data-sticker-id="sticker-11">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-12"
+                                                                data-sticker-id="sticker-12">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-13"
+                                                                data-sticker-id="sticker-13">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-14"
+                                                                data-sticker-id="sticker-14">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-15"
+                                                                data-sticker-id="sticker-15">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-16"
+                                                                data-sticker-id="sticker-16">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-17"
+                                                                data-sticker-id="sticker-17">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-18"
+                                                                data-sticker-id="sticker-18">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-19"
+                                                                data-sticker-id="sticker-19">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-20"
+                                                                data-sticker-id="sticker-20">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-21"
+                                                                data-sticker-id="sticker-21">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-22"
+                                                                data-sticker-id="sticker-22">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-23"
+                                                                data-sticker-id="sticker-23">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <label class="choose-stickers__sticker">
+                                                        <div class="choose-stickers__body">
+                                                            <picture class="choose-stickers__img">
+                                                                <img src="images/stickers-img-1.png" alt="sticker">
+                                                            </picture>
+                                                            <input class="choose-stickers__input" type="checkbox"
+                                                                name="stickers[]" value="sticker-24"
+                                                                data-sticker-id="sticker-24">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="choose-stickers__arrow arrow choose-stickers-arrow--prev"
+                                            type="button" aria-label="Предыдущий стикер">
+                                            <div class="arrow__inner" data-aos="zoom-in" data-aos-delay="250">
+                                                <div class="arrow__body">
+                                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_6003_3527)">
+                                                            <path
+                                                                d="M13.997 7.99378C13.997 5.63036 13.997 3.26381 14 0.900388C14 0.644038 13.9483 0.415824 13.766 0.231377C13.5077 -0.0280998 13.1491 -0.0749931 12.8148 0.118833C11.9366 0.62528 11.0584 1.13173 10.1802 1.6413C6.95898 3.50453 3.73475 5.37088 0.513567 7.23411C0.230954 7.39668 0.0212727 7.59988 0.00303936 7.95314C-0.0151939 8.32204 0.16106 8.57213 0.464946 8.7472C1.35229 9.25678 2.2366 9.7726 3.12394 10.2853C6.34209 12.1454 9.56023 14.0024 12.7753 15.8719C13.295 16.1751 13.8511 15.9 13.9696 15.4123C13.997 15.3029 13.997 15.1841 13.997 15.0715C14 12.7144 13.997 10.3541 13.997 7.99378Z"
+                                                                fill="#09102E" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_6003_3527">
+                                                                <rect width="14" height="16" fill="white"
+                                                                    transform="matrix(-1 0 0 1 14 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <button class="choose-stickers__arrow arrow choose-stickers-arrow--next"
+                                            type="button" aria-label="Следующий стикер">
+                                            <div class="arrow__inner" data-aos="zoom-in" data-aos-delay="250">
+                                                <div class="arrow__body">
+                                                    <svg width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_6003_2693)">
+                                                            <path
+                                                                d="M0.00303885 7.99378C0.00303885 5.63036 0.00303885 3.26381 0 0.900388C0 0.644038 0.0516605 0.415824 0.233992 0.231377C0.492294 -0.0280998 0.850879 -0.0749931 1.18515 0.118833C2.06338 0.62528 2.94161 1.13173 3.81984 1.6413C7.04102 3.50453 10.2652 5.37088 13.4864 7.23411C13.769 7.39668 13.9787 7.59988 13.997 7.95314C14.0152 8.32204 13.8389 8.57213 13.5351 8.7472C12.6477 9.25678 11.7634 9.7726 10.8761 10.2853C7.65791 12.1454 4.43977 14.0024 1.22466 15.8719C0.705014 16.1751 0.148904 15.9 0.0303885 15.4123C0.00303885 15.3029 0.00303885 15.1841 0.00303885 15.0715C0 12.7144 0.00303885 10.3541 0.00303885 7.99378Z"
+                                                                fill="#09102E" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_6003_2693">
+                                                                <rect width="14" height="16" fill="white" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="configurator__steps steps" data-aos="fade">
+                            <ul class="steps__list" role="tablist">
+                                <li class="steps__item steps__item--active">
+                                    <button type="button" data-step-tab="1" aria-selected="true">
+                                        1. Основа
+                                    </button>
+                                </li>
+                                <li class="steps__item">
+                                    <button type="button" data-step-tab="2" aria-selected="false">
+                                        2. Текст
+                                    </button>
+                                </li>
+                                <li class="steps__item">
+                                    <button type="button" data-step-tab="3" aria-selected="false">
+                                        3. Дизайн
+                                    </button>
+                                </li>
+                            </ul>
+                            <button class="steps__link btn btn--colored" type="button" data-next-step>
+                                <span>
+                                    Далее
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__request request screen" id="request" data-screen="request" aria-hidden="true">
+                <div class="container">
+                    <div class="request__inner" data-aos="fade">
+                        <button class="request__close" type="button" data-screen-target="configurator"
+                            aria-controls="configurator" aria-label="Вернуться к конфигуратору">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="1.41602" width="20" height="2" transform="rotate(45 1.41602 0)"
+                                    fill="#352464" />
+                                <rect x="15.5566" y="1.41425" width="20" height="2"
+                                    transform="rotate(135 15.5566 1.41425)" fill="#352464" />
+                            </svg>
+                        </button>
+                        <div class="request__titling">
+                            <div class="request__suptext">
+                                Остался только один шаг!
+                            </div>
+                            <h2 class="request__title">
+                                Заполните свои данные, чтобы отправить письмо
+                            </h2>
+                        </div>
+                        <form class="request__form form" action="#" method="post" novalidate>
+                            <div class="form__fields">
+                                <div class="form__box">
+                                    <input class="form__input" type="text" name="firstName" placeholder="Имя*"
+                                        autocomplete="given-name" required>
+                                </div>
+                                <div class="form__box">
+                                    <input class="form__input" type="text" name="lastName" placeholder="Фамилия*"
+                                        autocomplete="family-name" required>
+                                </div>
+                                <div class="form__box">
+                                    <input class="form__input" type="email" name="email" placeholder="Email*"
+                                        autocomplete="email" inputmode="email" required>
+                                </div>
+                            </div>
+                            <div class="form__agree">
+                                <label class="form__checkbox">
+                                    <input class="form__checkbox-input" type="checkbox" name="agreement" required>
+
+                                    <span class="form__checkbox-mark">
+                                        <svg viewBox="0 0 12 10" fill="none" aria-hidden="true">
+                                            <path d="M1 5l3.5 3.5L11 1" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                </label>
+                                <p class="form__text">
+                                    Если вам исполнилось 18 лет и вы соглашаетесь с Правилами проведения этой акции,
+                                    поставьте отметку в поле, чтобы поучаствовать. Мы всегда обращаемся с вашими данными
+                                    честно и с уважением. Если вы хотите узнать больше о том, как мы работаем с вашими
+                                    данными, ознакомьтесь с нашим Уведомлением о конфиденциальности.
+                                </p>
+                            </div>
+                            <div class="form__recaptcha recaptcha">
+                                <picture class="recaptcha__img">
+                                    <img src="images/recaptcha-img.jpg" alt="recaptcha">
+                                </picture>
+                            </div>
+                            <button class="form__btn btn btn--colored" type="submit">
+                                <span>
+                                    Отправить письмо
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <section class="main__success success screen" id="success" data-screen="success" aria-hidden="true">
+                <div class="container">
+                    <div class="success__inner" data-aos="fade">
+                        <div class="success__titling">
+                            <div class="success__suptext">
+                                Спасибо, что присоединилися к движению!
+                            </div>
+                            <div class="success__suptitle">
+                                Получено писем:
+                            </div>
+                            <h2 class="success__title">
+                                Ваше письмо доставлено!
+                            </h2>
+                        </div>
+                        <a class="success__link btn btn--colored" href="#">
+                            <span>
+                                Попытай удачу!
+                            </span>
+                        </a>
+                        <p class="success__text">
+                            Теперь вы стали частью истории BTS. Хотите выиграть эксклюзивные призы OREO & BTS? Перейдите
+                            к разделу “Акции”, чтобы принять участие 789 456 сообщений - и их стает <br>
+                            гораздо больше.
+                        </p>
+                        <div class="success__links links">
+                            <a class="links__link btn btn--transparent" href="#letters" data-screen-target="letters"
+                                aria-controls="letters">
+                                <span>
+                                    Посмотреть все письма
+                                </span>
+                            </a>
+                            <a class="links__link btn btn--colored" href="#start" data-screen-target="start"
+                                data-reset-configurator aria-controls="start">
+                                <span>
+                                    Отправить еще одно
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="main__letters letters screen" id="letters" data-screen="letters" aria-hidden="true">
+                <div class="letters__viewport" data-letters-viewport tabindex="0"
+                    aria-label="Галерея писем. Перетаскивайте, чтобы перемещаться по карточкам.">
+                    <div class="letters__canvas" data-letters-canvas></div>
+                </div>
+                <div class="letters__overlay">
+                    <div class="container">
+                        <div class="letters__body">
+                            <div class="letters__intro" data-aos="fade">
+                                <div class="letters__titling">
+                                    <p class="letters__suptext">Передвиньте, чтобы посмотреть</p>
+                                    <h2 class="letters__title">Письма со всего мира!</h2>
+                                    <p class="letters__text">Посмотрите, как фанаты BTS со всего мира демонстрируют свою
+                                        любовь
+                                    </p>
+                                </div>
+                                <button class="letters__find btn btn--colored" type="button" data-find-own-letter>
+                                    <span>Найти свою карточку</span>
+                                </button>
+                            </div>
+                            <div class="letters__bottom" data-aos="fade">
+                                <nav class="letters__steps steps" aria-label="Раздел писем">
+
+                                    <label class="letters__select-wrap">
+                                        <span class="letters__select-label">
+                                            Письма
+                                        </span>
+
+                                        <select class="letters__select" data-letters-country
+                                            aria-label="Выберите страну">
+                                            <option value="all">Все письма</option>
+                                            <option value="kz">Казахстан</option>
+                                            <option value="ru">Россия</option>
+                                            <option value="kr">Южная Корея</option>
+                                            <option value="uz">Узбекистан</option>
+                                        </select>
+                                    </label>
+
+                                    <ul class="steps__list" role="tablist">
+                                        <li class="steps__item steps__item--active">
+                                            <button type="button" data-screen-target="letters" aria-selected="true">
+                                                Все письма
+                                            </button>
+                                        </li>
+
+                                        <li class="steps__item">
+                                            <button type="button" data-screen-target="global" aria-controls="global"
+                                                aria-selected="false">
+                                                По всему миру
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="letters__modal" data-letters-modal aria-hidden="true" role="dialog"
+                    aria-label="Просмотр письма">
+                    <button class="letters__modal-backdrop" type="button" data-close-letter
+                        aria-label="Закрыть"></button>
+                    <button class="letters__modal-close" type="button" data-close-letter aria-label="Закрыть">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="1.41602" width="20" height="2" transform="rotate(45 1.41602 0)" fill="#352464" />
+                            <rect x="15.5566" y="1.41425" width="20" height="2" transform="rotate(135 15.5566 1.41425)"
+                                fill="#352464" />
+                        </svg>
+                    </button>
+                    <button class="letters__modal-nav letters__modal-nav--prev arrow" type="button" data-letter-prev
+                        aria-label="Предыдущее письмо">
+                        <div class="arrow__inner">
+                            <div class="arrow__body">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                                    <path
+                                        d="M13.997 7.99378C13.997 5.63036 13.997 3.26381 14 0.900388C14 0.644038 13.9483 0.415824 13.766 0.231377C13.5077 -0.0280998 13.1491 -0.0749931 12.8148 0.118833C11.9366 0.62528 11.0584 1.13173 10.1802 1.6413C6.95898 3.50453 3.73475 5.37088 0.513567 7.23411C0.230954 7.39668 0.0212727 7.59988 0.00303936 7.95314C-0.0151939 8.32204 0.16106 8.57213 0.464946 8.7472C1.35229 9.25678 2.2366 9.7726 3.12394 10.2853C6.34209 12.1454 9.56023 14.0024 12.7753 15.8719C13.295 16.1751 13.8511 15.9 13.9696 15.4123C13.997 15.3029 13.997 15.1841 13.997 15.0715C14 12.7144 13.997 10.3541 13.997 7.99378Z"
+                                        fill="#09102E" />
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+
+                    <button class="letters__modal-nav letters__modal-nav--next arrow" type="button" data-letter-next
+                        aria-label="Следующее письмо">
+                        <div class="arrow__inner">
+                            <div class="arrow__body">
+                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+                                    <path
+                                        d="M0.00303885 7.99378C0.00303885 5.63036 0.00303885 3.26381 0 0.900388C0 0.644038 0.0516605 0.415824 0.233992 0.231377C0.492294 -0.0280998 0.850879 -0.0749931 1.18515 0.118833C2.06338 0.62528 2.94161 1.13173 3.81984 1.6413C7.04102 3.50453 10.2652 5.37088 13.4864 7.23411C13.769 7.39668 13.9787 7.59988 13.997 7.95314C14.0152 8.32204 13.8389 8.57213 13.5351 8.7472C12.6477 9.25678 11.7634 9.7726 10.8761 10.2853C7.65791 12.1454 4.43977 14.0024 1.22466 15.8719C0.705014 16.1751 0.148904 15.9 0.0303885 15.4123C0.00303885 15.3029 0.00303885 15.1841 0.00303885 15.0715C0 12.7144 0.00303885 10.3541 0.00303885 7.99378Z"
+                                        fill="#09102E" />
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                    <article class="letters__modal-card letter-card letter-card--modal" data-letter-modal-card>
+                        <img class="letter-card__image" data-letter-modal-image src="images/card-img-1.png" alt="">
+                        <img class="letter-card__logo" src="images/card-logo.png" alt="Oreo BTS">
+                        <img class="letter-card__sticker" src="images/stickers-img-1.png" alt="">
+                        <p class="letter-card__text" data-letter-modal-text></p>
+                        <p class="letter-card__country" data-letter-modal-country></p>
+                    </article>
+                </div>
+            </section>
+            <section class="main__global global screen" id="global" data-screen="global" aria-hidden="true">
+                <picture class="global__bg global__bg--desk">
+                    <img src="images/global-bg.jpg" alt="bg">
+                </picture>
+                <picture class="global__bg global__bg--mob">
+                    <img src="images/global-bg-mob.jpg" alt="bg">
+                </picture>
+                <div class="container">
+                    <div class="global__inner" data-aos="fade-up">
+                        <div class="global__body">
+                            <div class="global__titling">
+                                <p class="global__suptext">Присоединяйтесь к движению! Добавьте свое письмо! Сделаем это
+                                    вместе!</p>
+                                <div class="global__subtitle">
+                                    Получено писем:
+                                </div>
+                                <div class="global__title">
+                                    789,789
+                                </div>
+                                <p class="global__text">
+                                    Помогите создать самое большое в мире письмо о любви к BTS
+                                </p>
+                            </div>
+                            <button class="global__add-letter btn btn--colored" type="button" data-screen-target="start"
+                                aria-controls="start">
+                                <span>Добавить свое письмо</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <div class="main__player player-wrap" data-aos="fade" data-aos-delay="4000">
+                <div class="player">
+                    <div class="player__inner">
+                        <picture class="player__img">
+                            <img src="" alt="">
+                        </picture>
+
+                        <div class="player__title">
+                            <div class="player__suptext"></div>
+                            <div class="player__text"></div>
+                        </div>
+
+                        <button class="player__play" type="button" aria-label="Play">
+                            <svg class="player__play-icon" width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.5 7.13L1.5.2C.83-.19 0 .3 0 1.07v13.86c0 .77.83 1.26 1.5.87l12-6.93a1 1 0 0 0 0-1.74Z"
+                                    fill="white" />
+                            </svg>
+
+                            <svg class="player__pause-icon" width="14" height="16" viewBox="0 0 14 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" hidden>
+                                <rect x="1" width="4" height="16" rx="1" fill="white" />
+                                <rect x="9" width="4" height="16" rx="1" fill="white" />
+                            </svg>
+                        </button>
+
+                        <audio class="player__audio" preload="metadata"></audio>
+                    </div>
+                </div>
+            </div>
+            <div class="main__langs langs">
+                <div class="langs__inner" data-aos="fade" data-aos-delay="4000">
+                    <div class="langs__body">
+                        <ul class="langs__list">
+                            <li class="langs__item langs__item--active">
+                                Рус
+                            </li>
+                            <li class="langs__item">
+                                <a class="langs__link" href="#">
+                                    Қаз
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/fancybox.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>
