@@ -2,21 +2,21 @@
 // AOS
 // ==========================================
 
-jQuery(document).ready(function () {
-  (function () {
-    AOS.init({
-      duration: 750,
-      offset: 0,
-      anchorPlacement: "top-bottom",
-    });
-  })();
-});
-
-// ==========================================
-// AOS REPLAY
-// ==========================================
-
 const aosReplayTokens = new WeakMap();
+
+function initAos() {
+  AOS.init({
+    duration: 750,
+    offset: 0,
+    anchorPlacement: "top-bottom",
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAos, { once: true });
+} else {
+  initAos();
+}
 
 function collectAosElements(scopes) {
   const elements = [];
@@ -65,20 +65,15 @@ function replayAosElements(scopes, options = {}) {
 
   elements.forEach((element) => {
     element.style.transition = "";
-
-    if (skipDelay) {
-      element.style.transitionDelay = "0s";
-    }
+    element.style.transitionDelay = skipDelay ? "0s" : "";
   });
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       elements.forEach((element, index) => {
-        if (aosReplayTokens.get(element) !== tokens[index]) {
-          return;
+        if (aosReplayTokens.get(element) === tokens[index]) {
+          element.classList.add("aos-animate");
         }
-
-        element.classList.add("aos-animate");
       });
     });
   });
@@ -391,7 +386,6 @@ const screens = Array.from(document.querySelectorAll("[data-screen]"));
 
 if (screens.length) {
   const screenTransitionDuration = 700;
-
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)",
   ).matches;
@@ -399,45 +393,24 @@ if (screens.length) {
   let activeScreen =
     screens.find((screen) => screen.classList.contains("screen--active")) ||
     screens[0];
-
   let transitionTimer;
 
   const languageControl = document.querySelector(".main__langs");
   const burgerControl = document.querySelector(".header__burger");
-
-  // ВАЖНО:
-  // теперь переключаем wrapper кнопки,
-  // а не саму кнопку
   const addLetterControl = document.querySelector(".header__wrp");
-
-  // ВАЖНО:
-  // AOS находится на .main__player / .player-wrap,
-  // а наше скрытие работает со внутренним .player
   const playerControl = document.querySelector(".main__player .player");
-
-  const syncPageScroll = (screen) => {
-    const shouldLockPage = screen.scrollHeight <= window.innerHeight + 1;
-
-    document.documentElement.classList.toggle(
-      "screen-scroll-locked",
-      shouldLockPage,
-    );
-  };
-
   const mobileLayoutQuery = window.matchMedia("(max-width: 1200px)");
+
+  const syncPageScroll = () => {
+    document.documentElement.classList.add("screen-scroll-locked");
+  };
 
   const syncScreenChrome = (screen) => {
     const screenName = screen.dataset.screen;
-
     const isHomeScreen = screenName === "home";
     const isRequestScreen = screenName === "request";
     const isLettersScreen = screenName === "letters";
-
     const isMobileLayout = mobileLayoutQuery.matches;
-
-    // На desktop поведение старое.
-    // На <= 1200 player больше не скрываем
-    // ни на request, ни на следующих экранах.
     const shouldHidePlayer =
       !isMobileLayout &&
       ["request", "success", "letters", "global"].includes(screenName);
@@ -468,21 +441,16 @@ if (screens.length) {
   const notifyScreenShown = (screen) => {
     document.dispatchEvent(
       new CustomEvent("screen:shown", {
-        detail: {
-          screen: screen.dataset.screen,
-        },
+        detail: { screen: screen.dataset.screen },
       }),
     );
   };
 
   const cleanInactiveScreens = () => {
     screens.forEach((screen) => {
-      if (screen === activeScreen) {
-        return;
-      }
+      if (screen === activeScreen) return;
 
       screen.classList.remove("screen--active", "screen--leaving");
-
       screen.setAttribute("aria-hidden", "true");
     });
   };
@@ -492,16 +460,12 @@ if (screens.length) {
       (screen) => screen.dataset.screen === screenName,
     );
 
-    if (!nextScreen || nextScreen === activeScreen) {
-      return;
-    }
+    if (!nextScreen || nextScreen === activeScreen) return;
 
     clearTimeout(transitionTimer);
-
     window.scrollTo(0, 0);
 
     const previousScreen = activeScreen;
-
     const isHomeToStart =
       previousScreen.dataset.screen === "home" &&
       nextScreen.dataset.screen === "start";
@@ -515,30 +479,21 @@ if (screens.length) {
       window.resetConfigurator();
     }
 
-    syncPageScroll(nextScreen);
+    nextScreen.scrollTop = 0;
+    syncPageScroll();
     syncScreenChrome(nextScreen);
-
-    // ========================================
-    // HOME -> START
-    // ========================================
 
     if (isHomeToStart) {
       previousScreen.classList.add("screen--leaving");
-
       previousScreen.setAttribute("aria-hidden", "true");
 
       transitionTimer = window.setTimeout(
         () => {
           cleanInactiveScreens();
-
           nextScreen.classList.add("screen--active");
-
           nextScreen.classList.remove("screen--leaving");
-
           nextScreen.setAttribute("aria-hidden", "false");
-
           replayAosElements([nextScreen]);
-
           notifyScreenShown(nextScreen);
         },
         reducedMotion ? 0 : screenTransitionDuration,
@@ -547,45 +502,34 @@ if (screens.length) {
       return;
     }
 
-    // ========================================
-    // ALL OTHER SCREENS
-    // ========================================
-
     nextScreen.classList.add("screen--active");
-
     nextScreen.classList.remove("screen--leaving");
-
     nextScreen.setAttribute("aria-hidden", "false");
-
     previousScreen.classList.add("screen--leaving");
 
     replayAosElements([nextScreen], {
       skipDelay: nextScreen.dataset.screen === "home",
     });
-
     notifyScreenShown(nextScreen);
 
     transitionTimer = window.setTimeout(
-      () => {
-        cleanInactiveScreens();
-      },
+      cleanInactiveScreens,
       reducedMotion ? 0 : screenTransitionDuration,
     );
   };
 
   window.showScreen = showScreen;
 
-  syncPageScroll(activeScreen);
+  syncPageScroll();
   syncScreenChrome(activeScreen);
 
-  mobileLayoutQuery.addEventListener("change", function () {
-  syncScreenChrome(activeScreen);
-});
+  mobileLayoutQuery.addEventListener("change", () => {
+    syncScreenChrome(activeScreen);
+  });
 
   document.querySelectorAll("[data-screen-target]").forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-
       showScreen(trigger.dataset.screenTarget);
     });
   });
@@ -603,6 +547,8 @@ if (lettersScreen) {
   );
 
   const lettersCanvas = lettersScreen.querySelector("[data-letters-canvas]");
+
+  const lettersBody = lettersScreen.querySelector(".letters__body");
 
   const findOwnLetterButton = lettersScreen.querySelector(
     "[data-find-own-letter]",
@@ -786,6 +732,45 @@ if (lettersScreen) {
   let galleryCentered = false;
 
   let openedLetterId = null;
+
+  let galleryBodyRestoreTimer = null;
+
+  let findOwnLetterTimer = null;
+
+  const updateLettersBodyCoverage = () => {
+    if (!lettersBody) {
+      return;
+    }
+
+    const bodyRect = lettersBody.getBoundingClientRect();
+    const safeArea = 14;
+
+    cardById.forEach((card) => {
+      const cardRect = card.getBoundingClientRect();
+      const overlapsBody =
+        cardRect.right > bodyRect.left + safeArea &&
+        cardRect.left < bodyRect.right - safeArea &&
+        cardRect.bottom > bodyRect.top + safeArea &&
+        cardRect.top < bodyRect.bottom - safeArea;
+
+      card.classList.toggle("letter-card--under-body", overlapsBody);
+    });
+  };
+
+  const setGalleryBrowsing = (isBrowsing) => {
+    lettersScreen.classList.toggle("letters--is-browsing", isBrowsing);
+
+    if (!isBrowsing) {
+      requestAnimationFrame(updateLettersBodyCoverage);
+    }
+  };
+
+  const restoreLettersBody = () => {
+    window.clearTimeout(galleryBodyRestoreTimer);
+    galleryBodyRestoreTimer = window.setTimeout(() => {
+      setGalleryBrowsing(false);
+    }, 140);
+  };
 
   // ========================================
   // CREATE CARD
@@ -1019,6 +1004,11 @@ if (lettersScreen) {
 
     openedLetterId = null;
 
+    window.clearTimeout(findOwnLetterTimer);
+
+    // После закрытия модального письма возвращаем центральный текст.
+    restoreLettersBody();
+
     // Возвращаем burger.
 
     if (lettersBurger) {
@@ -1046,6 +1036,11 @@ if (lettersScreen) {
     findOwnLetterButton.addEventListener("click", () => {
       updateOwnLetter();
 
+      // На время поиска оставляем только карточку: нижняя навигация
+      // остаётся на месте, так как она находится вне letters__body.
+      window.clearTimeout(galleryBodyRestoreTimer);
+      setGalleryBrowsing(true);
+
       centerOnLetter("mine");
 
       const ownCard = cardById.get("mine");
@@ -1059,6 +1054,14 @@ if (lettersScreen) {
       void ownCard.offsetWidth;
 
       ownCard.classList.add("letter-card--found");
+
+      window.clearTimeout(findOwnLetterTimer);
+
+      findOwnLetterTimer = window.setTimeout(() => {
+        if (lettersScreen.classList.contains("screen--active")) {
+          openLetter("mine");
+        }
+      }, 1000);
     });
   }
 
@@ -1133,6 +1136,10 @@ if (lettersScreen) {
     updateOwnLetter();
 
     centerGallery();
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(updateLettersBodyCoverage);
+    });
   });
 
   // ========================================
@@ -1181,6 +1188,11 @@ if (lettersScreen) {
       const distanceY = event.clientY - dragStartY;
 
       if (Math.abs(distanceX) > 5 || Math.abs(distanceY) > 5) {
+        if (!hasDragged) {
+          window.clearTimeout(galleryBodyRestoreTimer);
+          setGalleryBrowsing(true);
+        }
+
         hasDragged = true;
       }
 
@@ -1207,6 +1219,8 @@ if (lettersScreen) {
         requestAnimationFrame(() => {
           suppressCardClick = false;
         });
+
+        restoreLettersBody();
       }
 
       dragPointerId = null;
@@ -1233,6 +1247,30 @@ if (lettersScreen) {
     lettersViewport.addEventListener("pointerup", stopGalleryDrag);
 
     lettersViewport.addEventListener("pointercancel", stopGalleryDrag);
+
+    // Колёсико на desktop тоже двигает карточки, поэтому для него
+    // используем то же поведение, что и для pointer-drag.
+    lettersViewport.addEventListener(
+      "wheel",
+      () => {
+        window.clearTimeout(galleryBodyRestoreTimer);
+        setGalleryBrowsing(true);
+        restoreLettersBody();
+      },
+      { passive: true },
+    );
+
+    lettersViewport.addEventListener(
+      "scroll",
+      () => {
+        if (!lettersScreen.classList.contains("letters--is-browsing")) {
+          updateLettersBodyCoverage();
+        }
+      },
+      { passive: true },
+    );
+
+    window.addEventListener("resize", updateLettersBodyCoverage);
   }
 
   // ========================================
@@ -1318,11 +1356,8 @@ const requestForm = document.querySelector(".request__form");
 
 if (requestForm) {
   const firstNameInput = requestForm.querySelector('[name="firstName"]');
-
   const lastNameInput = requestForm.querySelector('[name="lastName"]');
-
   const emailInput = requestForm.querySelector('[name="email"]');
-
   const agreementInput = requestForm.querySelector('[name="agreement"]');
 
   const setBoxError = (input, hasError) => {
@@ -1348,9 +1383,7 @@ if (requestForm) {
   const validateEmail = (input) => {
     if (!input) return false;
 
-    const value = input.value.trim();
-
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
 
     setBoxError(input, !isValid);
 
@@ -1360,12 +1393,11 @@ if (requestForm) {
   const validateAgreement = (input) => {
     if (!input) return false;
 
-    const agree = input.closest(".form__agree");
-
+    const agreement = input.closest(".form__agree");
     const isValid = input.checked;
 
-    if (agree) {
-      agree.classList.toggle("form__agree--error", !isValid);
+    if (agreement) {
+      agreement.classList.toggle("form__agree--error", !isValid);
     }
 
     input.setAttribute("aria-invalid", String(!isValid));
@@ -1394,10 +1426,10 @@ if (requestForm) {
   if (agreementInput) {
     agreementInput.addEventListener("change", () => {
       if (agreementInput.checked) {
-        const agree = agreementInput.closest(".form__agree");
+        const agreement = agreementInput.closest(".form__agree");
 
-        if (agree) {
-          agree.classList.remove("form__agree--error");
+        if (agreement) {
+          agreement.classList.remove("form__agree--error");
         }
 
         agreementInput.setAttribute("aria-invalid", "false");
@@ -1408,16 +1440,12 @@ if (requestForm) {
   requestForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const isFirstNameValid = validateTextInput(firstNameInput);
-
-    const isLastNameValid = validateTextInput(lastNameInput);
-
-    const isEmailValid = validateEmail(emailInput);
-
-    const isAgreementValid = validateAgreement(agreementInput);
-
-    const isFormValid =
-      isFirstNameValid && isLastNameValid && isEmailValid && isAgreementValid;
+    const isFormValid = [
+      validateTextInput(firstNameInput),
+      validateTextInput(lastNameInput),
+      validateEmail(emailInput),
+      validateAgreement(agreementInput),
+    ].every(Boolean);
 
     if (!isFormValid) {
       const firstError = requestForm.querySelector(
@@ -1430,9 +1458,6 @@ if (requestForm) {
 
       return;
     }
-
-    // Здесь позже добавляем реальную
-    // отправку формы на backend/API.
 
     if (typeof window.showScreen === "function") {
       window.showScreen("success");
@@ -1448,17 +1473,11 @@ const player = document.querySelector(".player");
 
 if (player) {
   const audio = player.querySelector(".player__audio");
-
   const image = player.querySelector(".player__img img");
-
   const suptext = player.querySelector(".player__suptext");
-
   const title = player.querySelector(".player__text");
-
   const playButton = player.querySelector(".player__play");
-
   const playIcon = player.querySelector(".player__play-icon");
-
   const pauseIcon = player.querySelector(".player__pause-icon");
 
   const playlist = [
@@ -1478,17 +1497,11 @@ if (player) {
     if (!track) return;
 
     currentTrack = index;
-
     audio.src = track.audio;
-
     image.src = track.image;
-
     image.alt = `${track.artist} - ${track.title}`;
-
     suptext.textContent = track.artist;
-
     title.textContent = track.title;
-
     audio.load();
   }
 
@@ -1514,32 +1527,22 @@ if (player) {
 
   function setPlayingState() {
     player.classList.add("is-playing");
-
     playIcon.hidden = true;
-
     pauseIcon.hidden = false;
-
     playButton.setAttribute("aria-label", "Pause");
   }
 
   function setPausedState() {
     player.classList.remove("is-playing");
-
     playIcon.hidden = false;
-
     pauseIcon.hidden = true;
-
     playButton.setAttribute("aria-label", "Play");
   }
 
   playButton.addEventListener("click", togglePlay);
-
   audio.addEventListener("play", setPlayingState);
-
   audio.addEventListener("pause", setPausedState);
-
   audio.loop = true;
-
   loadTrack(currentTrack);
 }
 
@@ -1612,6 +1615,10 @@ document.addEventListener("DOMContentLoaded", function () {
     configurator.querySelectorAll("[data-sticker-preview]"),
   );
 
+  const stickersSwiperElement = configurator.querySelector(
+    ".choose-stickers__swiper",
+  );
+
   // ========================================
   // STATE
   // ========================================
@@ -1666,54 +1673,19 @@ const stickerConfig = {
   fallbackHeight: 439,
 };
 
-function getStickerMetrics() {
-  const width = window.innerWidth;
+  function getStickerMetrics(area) {
+    const smallestSide = Math.max(1, Math.min(area.width, area.height));
+    const maxSize = Math.round(
+      Math.max(42, Math.min(96, smallestSide * 0.18)),
+    );
 
-  // Самый маленький mobile
-  if (width <= 576) {
     return {
-      minSize: 40,
-      maxSize: 50,
-      edgePadding: 4,
-      gap: 3,
+      minSize: Math.round(maxSize * 0.78),
+      maxSize,
+      edgePadding: Math.max(4, Math.round(maxSize * 0.11)),
+      gap: Math.max(3, Math.round(maxSize * 0.1)),
     };
   }
-
-  if (width <= 768) {
-    return {
-      minSize: 46,
-      maxSize: 58,
-      edgePadding: 5,
-      gap: 4,
-    };
-  }
-
-  if (width <= 992) {
-    return {
-      minSize: 54,
-      maxSize: 68,
-      edgePadding: 6,
-      gap: 5,
-    };
-  }
-
-  // Mobile у нас считается до 1200
-  if (width <= 1200) {
-    return {
-      minSize: 62,
-      maxSize: 78,
-      edgePadding: 7,
-      gap: 5,
-    };
-  }
-
-  return {
-    minSize: 80,
-    maxSize: 100,
-    edgePadding: 8,
-    gap: 6,
-  };
-}
 
   const stickerPlacementById = {};
 
@@ -1842,7 +1814,7 @@ function isInBlockedZone(cx, cy, r, area) {
 function findStickerPlacement() {
   const area = getStickerAreaSize();
 
-  const metrics = getStickerMetrics();
+  const metrics = getStickerMetrics(area);
 
   const pad = metrics.edgePadding;
 
@@ -1989,12 +1961,8 @@ function findStickerPlacement() {
 
       if (tabStep === newStep) {
         item.classList.add("steps__item--active");
-
-        tab.setAttribute("aria-selected", "true");
       } else {
         item.classList.remove("steps__item--active");
-
-        tab.setAttribute("aria-selected", "false");
       }
     });
 
@@ -2249,12 +2217,6 @@ function findStickerPlacement() {
 
   window.resetConfigurator = resetConfigurator;
 
-  document
-    .querySelectorAll("[data-reset-configurator]")
-    .forEach(function (trigger) {
-      trigger.addEventListener("click", resetConfigurator);
-    });
-
   // ========================================
   // COLORS EVENTS
   // ========================================
@@ -2285,6 +2247,33 @@ function findStickerPlacement() {
     });
   });
 
+  // Swiper дублирует слайды в loop-режиме. На мобильном устройстве тап
+  // часто попадает именно в копию стикера, поэтому переключаем оригинальный
+  // input по data-sticker-id и не даём браузеру фокусировать скрытый checkbox.
+  if (stickersSwiperElement) {
+    stickersSwiperElement.addEventListener("click", function (event) {
+      const chooser = event.target.closest(".choose-stickers__sticker");
+
+      if (!chooser || !stickersSwiperElement.contains(chooser)) {
+        return;
+      }
+
+      const clickedInput = chooser.querySelector("[data-sticker-id]");
+      const stickerId = clickedInput
+        ? clickedInput.getAttribute("data-sticker-id")
+        : null;
+      const input = stickerId ? getStickerInput(stickerId) : null;
+
+      if (!input) {
+        return;
+      }
+
+      event.preventDefault();
+      input.checked = !input.checked;
+      setSticker(input);
+    });
+  }
+
   // ========================================
   // DELETE STICKER FROM CARD
   // ========================================
@@ -2311,15 +2300,7 @@ function findStickerPlacement() {
 
       const stickerId = preview.getAttribute("data-sticker-preview");
 
-      let input = null;
-
-      stickerInputs.forEach(function (item) {
-        const inputId = item.getAttribute("data-sticker-id");
-
-        if (inputId === stickerId) {
-          input = item;
-        }
-      });
+      const input = getStickerInput(stickerId);
 
       if (!input) return;
 
@@ -2403,43 +2384,6 @@ function findStickerPlacement() {
 
         nextEl: ".choose-words-arrow--next",
       },
-
-      // breakpoints: {
-      //   0: {
-      //     slidesPerView: 1.1,
-      //     spaceBetween: 10,
-      //     allowTouchMove: true,
-      //     simulateTouch: true,
-      //   },
-      //
-      //   576: {
-      //     slidesPerView: 1.5,
-      //     spaceBetween: 15,
-      //     allowTouchMove: true,
-      //     simulateTouch: true,
-      //   },
-      //
-      //   768: {
-      //     slidesPerView: 2,
-      //     spaceBetween: 15,
-      //     allowTouchMove: true,
-      //     simulateTouch: true,
-      //   },
-      //
-      //   992: {
-      //     slidesPerView: 2.5,
-      //     spaceBetween: 20,
-      //     allowTouchMove: true,
-      //     simulateTouch: true,
-      //   },
-      //
-      //   1200: {
-      //     slidesPerView: 3,
-      //     spaceBetween: 20,
-      //     allowTouchMove: true,
-      //     simulateTouch: true,
-      //   },
-      // },
     });
   }
 
